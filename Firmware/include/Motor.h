@@ -1,15 +1,15 @@
 #pragma once
 #include <cstdint>
+#include "driver/gpio.h"
 
 class Motor
 {
 private:
     uint8_t _pwr = 0;
-    uint8_t _pin = 0;
-
-    /* data */
+    gpio_num_t _pin = GPIO_NUM_NC;
+    
 public:
-    Motor(uint8_t pin);
+    Motor(gpio_num_t pin);
     void Init();
     void Power(uint8_t pwr);
 

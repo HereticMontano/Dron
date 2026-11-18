@@ -1,22 +1,13 @@
-#include <Arduino.h>
-#include <Wire.h>
-#include "r4_init.h"
 #include "Dron.h"
 
 void loop(Dron &dron);
 
 
 
-int main()
+extern "C" void app_main(void)
 {
-    // 1. Inicializa el hardware base del Arduino (vectores IRQ, timers, USB, pines)
-    init();
 
-    // 2. Equivalente a setup()
-    Serial.begin(9600);
-    Wire.begin();
-
-    Dron dron;
+     Dron dron;
     dron.Init();
     // 3. Equivalente a loop()
     while (true)
@@ -24,12 +15,14 @@ int main()
         loop(dron);
     };
 
-    return 0;
+
+    // 3. Equivalente a loop()
 }
+
+
 
 void loop(Dron &dron)
 {
     dron.Fly();
-
-    delay(20);
+    
 }
