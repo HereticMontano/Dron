@@ -1,8 +1,10 @@
 #include "Dron.h"
+#include "Control.h"
 
 void Dron::Init()
 {
     _gy87.Initialice();
+    _control.Init();
 
     for (Motor &i : _motors)
     {
@@ -10,24 +12,66 @@ void Dron::Init()
     };
 }
 
-std::array<uint8_t, 4> Dron::CalculatePower()
+std::array<uint8_t, 4> Dron::CalculatePower(Control::ControlDirection direction)
 {
-    Vector3F acceleration = _gy87.GetAcceleration();
-    Vector3 gyro = _gy87.GetGyro();
+    float acceleration = _gy87.GetLinearAcceleration();
+    Vector3F gyro = _gy87.GetGyro();
     float hight = _gy87.GetPresure();
 
-    if (acceleration.X == 0 && acceleration.Y == 0 && acceleration.Z == 0 &&
-        gyro.X == 0 && gyro.Y == 0 && gyro.Z == 0)
+    if (!_started && direction.Start)
     {
-        return {5, 5, 5, 5};
+        _started = true;
+    }
+    else if (_started && direction.Start)
+    {
+        _started = false;
     }
 
-    return {0, 0, 0, 0};
+    std::array<uint8_t, 4> power{};
+    if (_started)
+    {
+
+        for (std::size_t i = 0; i < size_t(_motors); ++i)
+        {
+            power[i] = _motors[i].GetPower();
+            power[i] += static_cast<uint8_t>(direction.Throttle);
+        }
+
+        if (direction.Pitch > 0)
+        {
+            power[0] -= direction.Pitch;
+            power[2] -= direction.Pitch;
+        }
+        else if (direction.Pitch > 0)
+        {
+            power[1] -= direction.Pitch;
+            power[3] -= direction.Pitch;
+        }
+        
+        if (direction.Yaw < 0)
+        {
+            power[0] -= direction.Yaw;
+            power[2] -= direction.Yaw;
+        }
+        else if (direction.Yaw > 0)
+        {
+            power[1] -= direction.Yaw;
+            power[3] -= direction.Yaw;
+        }
+
+        if (direction.Roll > 0)
+        {
+        }
+    }
+
+    return power;
 };
 
 void Dron::Fly()
 {
-    std::array<uint8_t, 4> powerToEngines = CalculatePower();
+
+    Control::ControlDirection dirrection = _control.GetDirecction();
+    std::array<uint8_t, 4> powerToEngines = CalculatePower(dirrection);
 
     for (size_t i = 0; i < powerToEngines.size(); i++)
     {
