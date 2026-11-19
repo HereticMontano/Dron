@@ -1,5 +1,7 @@
 .vscode
 .pio
+.history
+
 # Prerequisites
 *.d
 

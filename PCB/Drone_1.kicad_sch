@@ -964,8 +964,8 @@
 					)
 				)
 			)
-			(property "Description" "ESP32-S3 SuperMini Development Board (2x9 pins, 15.24mm row spacing)"
-				(at 0 0 0)
+			(property "Description" ""
+				(at -1.016 23.114 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(hide yes)
@@ -989,10 +989,10 @@
 				)
 			)
 			(symbol "ESP32-S3_SuperMini_1_1"
-				(pin power_in line
+				(pin bidirectional line
 					(at -10.16 10.16 0)
 					(length 2.54)
-					(name "5V"
+					(name "TX/IO43"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1007,10 +1007,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at -10.16 7.62 0)
 					(length 2.54)
-					(name "GND"
+					(name "RX/IO44"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1025,10 +1025,10 @@
 						)
 					)
 				)
-				(pin power_in line
+				(pin bidirectional line
 					(at -10.16 5.08 0)
 					(length 2.54)
-					(name "3V3"
+					(name "IO1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1046,7 +1046,7 @@
 				(pin bidirectional line
 					(at -10.16 2.54 0)
 					(length 2.54)
-					(name "IO1"
+					(name "IO2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1064,7 +1064,7 @@
 				(pin bidirectional line
 					(at -10.16 0 0)
 					(length 2.54)
-					(name "IO2"
+					(name "IO3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1082,7 +1082,7 @@
 				(pin bidirectional line
 					(at -10.16 -2.54 0)
 					(length 2.54)
-					(name "IO3"
+					(name "IO4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1100,7 +1100,7 @@
 				(pin bidirectional line
 					(at -10.16 -5.08 0)
 					(length 2.54)
-					(name "IO4"
+					(name "IO5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1118,7 +1118,7 @@
 				(pin bidirectional line
 					(at -10.16 -7.62 0)
 					(length 2.54)
-					(name "IO5"
+					(name "IO6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1136,7 +1136,7 @@
 				(pin bidirectional line
 					(at -10.16 -10.16 0)
 					(length 2.54)
-					(name "IO6"
+					(name "IO7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1154,7 +1154,7 @@
 				(pin bidirectional line
 					(at 10.16 -10.16 180)
 					(length 2.54)
-					(name "IO7"
+					(name "IO8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1172,7 +1172,7 @@
 				(pin bidirectional line
 					(at 10.16 -7.62 180)
 					(length 2.54)
-					(name "IO8"
+					(name "IO9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1190,7 +1190,7 @@
 				(pin bidirectional line
 					(at 10.16 -5.08 180)
 					(length 2.54)
-					(name "IO9"
+					(name "IO10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1208,7 +1208,7 @@
 				(pin bidirectional line
 					(at 10.16 -2.54 180)
 					(length 2.54)
-					(name "IO10"
+					(name "IO11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1226,7 +1226,7 @@
 				(pin bidirectional line
 					(at 10.16 0 180)
 					(length 2.54)
-					(name "IO11"
+					(name "IO12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1244,7 +1244,7 @@
 				(pin bidirectional line
 					(at 10.16 2.54 180)
 					(length 2.54)
-					(name "IO12"
+					(name "IO13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1259,10 +1259,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 10.16 5.08 180)
 					(length 2.54)
-					(name "IO13"
+					(name "3V3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1277,10 +1277,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 10.16 7.62 180)
 					(length 2.54)
-					(name "RX/IO44"
+					(name "GND"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1295,10 +1295,10 @@
 						)
 					)
 				)
-				(pin bidirectional line
+				(pin power_in line
 					(at 10.16 10.16 180)
 					(length 2.54)
-					(name "TX/IO43"
+					(name "5V"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2787,26 +2787,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 74.93) (xy 144.78 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1d552c12-557e-4fe1-98fe-f7c66e489d39")
-	)
-	(wire
-		(pts
-			(xy 140.97 69.85) (xy 144.78 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1db49ac7-e725-4494-bb9f-5dd9df91eb22")
-	)
-	(wire
-		(pts
 			(xy 166.37 100.33) (xy 167.64 100.33)
 		)
 		(stroke
@@ -2834,6 +2814,16 @@
 			(type default)
 		)
 		(uuid "237c23af-341f-42e8-93cd-411081673090")
+	)
+	(wire
+		(pts
+			(xy 140.97 77.47) (xy 143.51 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23900c4b-f6b3-440c-a2d1-95ef11f43996")
 	)
 	(wire
 		(pts
@@ -2927,16 +2917,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 67.31) (xy 144.78 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c8b2e51-ccf6-43d9-8acc-9de7362325aa")
-	)
-	(wire
-		(pts
 			(xy 205.74 36.83) (xy 205.74 39.37)
 		)
 		(stroke
@@ -2987,16 +2967,6 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 85.09) (xy 140.97 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5bc3fe97-5350-4890-a4b8-79e8ba4df259")
-	)
-	(wire
-		(pts
 			(xy 175.26 100.33) (xy 184.15 100.33)
 		)
 		(stroke
@@ -3014,16 +2984,6 @@
 			(type default)
 		)
 		(uuid "5e5666db-acd9-426e-9085-7e43e8a7b1b7")
-	)
-	(wire
-		(pts
-			(xy 140.97 72.39) (xy 144.78 72.39)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "63ebb530-076d-484b-b50b-5e372551699d")
 	)
 	(wire
 		(pts
@@ -3137,6 +3097,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 82.55) (xy 120.65 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99ba3f95-964e-402b-b1d6-feb7fd18a792")
+	)
+	(wire
+		(pts
 			(xy 91.44 43.18) (xy 91.44 30.48)
 		)
 		(stroke
@@ -3157,6 +3127,16 @@
 	)
 	(wire
 		(pts
+			(xy 140.97 82.55) (xy 143.51 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fc34391-4641-4f6b-9970-76a1bdeac4c7")
+	)
+	(wire
+		(pts
 			(xy 241.3 74.93) (xy 241.3 77.47)
 		)
 		(stroke
@@ -3174,6 +3154,16 @@
 			(type default)
 		)
 		(uuid "a3bb88c4-91cf-4804-a6e3-dd5594bfc9a0")
+	)
+	(wire
+		(pts
+			(xy 140.97 80.01) (xy 143.51 80.01)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a45054d6-7049-4408-9d1b-dd722dae7079")
 	)
 	(wire
 		(pts
@@ -3244,6 +3234,16 @@
 			(type default)
 		)
 		(uuid "b2dbf050-9a40-4dbb-8c02-0144d82d2eb7")
+	)
+	(wire
+		(pts
+			(xy 143.51 74.93) (xy 140.97 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6b7a143-db1f-4078-b1f7-d26a9c261c81")
 	)
 	(wire
 		(pts
@@ -3394,16 +3394,6 @@
 			(type default)
 		)
 		(uuid "dc7c4e29-5473-4422-8c79-2bc5d30b0014")
-	)
-	(wire
-		(pts
-			(xy 140.97 85.09) (xy 140.97 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ddfb0c26-472d-4819-aa58-682ba3782c66")
 	)
 	(wire
 		(pts
@@ -3565,8 +3555,18 @@
 		)
 		(uuid "fdd8785c-aa52-4e8e-9aa3-ef676530330d")
 	)
+	(wire
+		(pts
+			(xy 132.08 85.09) (xy 120.65 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe2aaadf-20ea-4b66-807f-2ddc18cd69f9")
+	)
 	(label "PWM_M1"
-		(at 144.78 67.31 0)
+		(at 143.51 82.55 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3596,7 +3596,7 @@
 		(uuid "25df3851-36df-44fe-8bfb-ad92a28bf9bf")
 	)
 	(label "PWM_M4"
-		(at 144.78 74.93 0)
+		(at 143.51 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3616,7 +3616,7 @@
 		(uuid "4fb0317d-079d-4e53-a2a4-14209e157808")
 	)
 	(label "PWM_M3"
-		(at 144.78 72.39 0)
+		(at 143.51 77.47 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3666,7 +3666,7 @@
 		(uuid "c466cbe0-4afe-462b-a8bf-d05c597b9a86")
 	)
 	(label "PWM_M2"
-		(at 144.78 69.85 0)
+		(at 143.51 80.01 0)
 		(effects
 			(font
 				(size 1.27 1.27)
