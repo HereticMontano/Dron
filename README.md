@@ -13,4 +13,4 @@ Create a first draft of the schematic: battery, 3.3V voltage regulator, an ESP32
 First, I needed to migrate the driver I wrote for the GY-87 from Arduino libraries to native Espressif ESP-IDF so I can use it in the Drone project.
 
 Using LEDs to simulate the motors:  
-![Prototype](assets/Led_Engines.jpeg)
+![Prototype](assets/led_motors.jpeg)
