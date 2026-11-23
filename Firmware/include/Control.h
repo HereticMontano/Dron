@@ -51,15 +51,15 @@ private:
 public:
     struct ControlDirection
     {
-        // Left stick
-        int8_t Throttle = 0;
+        // Left stick        
         int8_t Yaw = 0;
 
         // Right Stick:
         int8_t Pitch = 0;
         int8_t Roll = 0;
 
-        uint8_t Start;
+        uint8_t ThrottleRT = 0;
+        uint8_t Start = 0;
     };
 
     void Init();

@@ -33,7 +33,7 @@ std::array<uint8_t, 4> Dron::CalculatePower(Control::ControlDirection direction)
         return std::array<uint8_t, NUMBER_OF_MOTORS>();
     }
 
-    float throttle = static_cast<float>(direction.Throttle);
+    float throttle = static_cast<float>(direction.ThrottleRT);
     float pitch = static_cast<float>(direction.Pitch);
     float roll = static_cast<float>(direction.Roll);
     float yaw = static_cast<float>(direction.Yaw);
