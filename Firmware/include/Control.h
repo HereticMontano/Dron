@@ -13,7 +13,12 @@ private:
         0x14, 0x12, 0x8A, 0x76, 0x04, 0xD1, 0x6C, 0x4F,
         0x7E, 0x53, 0xF2, 0xE8, 0x01, 0x00, 0xB1, 0x19);
 
+   
     static int OnControlAccess(uint16_t connHandle, uint16_t attrHandle, struct ble_gatt_access_ctxt *ctxt, void *arg);
+    static void BleHostTask(void *param);
+    static void OnBleSync();
+    static void StartAdvertising();
+    static int OnGapEvent(struct ble_gap_event *event, void *arg);
 
     static constexpr struct ble_gatt_chr_def CONTROL_CHARS[] = {
         {
@@ -40,17 +45,19 @@ private:
     };
 
     static inline Control *_instance = nullptr;
+    uint8_t _ownAddrType;
+    
 
 public:
     struct ControlDirection
     {
         // Left stick
-        int16_t Throttle = 0;
-        int16_t Yaw = 0;
+        int8_t Throttle = 0;
+        int8_t Yaw = 0;
 
         // Right Stick:
-        int16_t Pitch = 0;
-        int16_t Roll = 0;
+        int8_t Pitch = 0;
+        int8_t Roll = 0;
 
         uint8_t Start;
     };
